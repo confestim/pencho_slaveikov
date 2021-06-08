@@ -47,6 +47,7 @@ def check_tweets(verse):
             raise Exception("Already tweeted")
 
 def upload(verse, name):
+    api = authenticate()
     try:
         api.update_status(f"{verse}\n\nиз '{name}'")
         api.send_direct_message(2885504686, f"I have uploaded on {datetime.datetime.now()}")
