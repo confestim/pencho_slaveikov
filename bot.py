@@ -37,14 +37,15 @@ def upload(verse, name):
     auth.set_access_token(os.environ["access_key"], os.environ["access_secret"])
     api = tweepy.API(auth)
     api.update_status(f"{verse}\n\nиз '{name}'")
-    api.send_direct_message("@_yamoz", f"I have uploaded on {datetime.datetime.now()}")
+    api.send_direct_message(2885504686, f"I have uploaded on {datetime.datetime.now()}")
 
 
 if __name__ == "__main__":
     while True:
+        time.sleep(5)
         post, name = select_file()
         upload(post,name)
         print(f"Uploaded on {datetime.datetime.now()}\n")
-        time.sleep(86400)
+        time.sleep(43200)
 else:
     raise Exception("Cannot be imported")
